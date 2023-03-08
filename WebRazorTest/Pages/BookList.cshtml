@@ -1,0 +1,31 @@
+﻿@page
+@model WebRazorTest.Pages.BookListModel
+@{
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <a href="/RazorTestSayfa" class="btn btn-success">Geri Dön</a>
+       </div>
+
+        <div class="col-6">
+            <ul>
+                <li>
+                    @Model.Book.id
+                </li>
+                <li>
+                    @Model.Book.Title
+                </li>
+                <li>
+                    @Model.Book.Author
+                </li>
+                <li>
+                    @*<img src="https://picsum.photos/@Model.Book.ImgUrl" />*@
+                    <img src="https://picsum.photos/50/50" />
+                </li>
+            </ul>
+        </div>
+
+    </div>
