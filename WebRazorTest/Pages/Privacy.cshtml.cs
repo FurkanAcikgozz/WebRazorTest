@@ -23,7 +23,7 @@ namespace WebRazorTest.Pages
 
         //public ActionResult OnPosta()
         //{
-        //    return RedirectToPage("RazorTestSayfa");
+        //    return RedirectToPage("RazorTestSayfa");*
         //}
     }
 }
