@@ -1,0 +1,60 @@
+﻿@page
+@model WebRazorTest.Pages.Customers.indexModel
+@{
+}
+
+
+
+<div>
+    <h1 style="color:darkred">INDEX</h1>
+</div>
+
+<div>
+    <a style="color:black" asp-page="Create">Customer Create</a> &emsp;&emsp;&emsp;
+    <a style="color:black" asp-page="Details">Customer Detais</a>&emsp;&emsp;&emsp;
+    <a style="color:black" asp-page="Edit">Customer Edit</a>&emsp;&emsp;&emsp;
+    <a style="color:black" asp-page="Delete">Customer Delete</a>
+   
+    <h1>Contacts home page</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+
+
+            @if (Model.Customers != null)
+            {
+                foreach (var contact in Model.Customers)
+                {
+                    <tr>
+                        <td> @contact.Id </td>
+                        <td>@contact.Name</td>
+                        <td>
+                            <!-- <snippet_Edit> -->
+                            <a asp-page="./Edit" asp-route-id="@contact.Id">Edit</a>  |
+                            <a asp-page="./Details" asp-route-id="@contact.Id">Details</a>
+                            <!-- </snippet_Edit> -->
+                            <!-- <snippet_Delete> -->
+                            @*<button type="submit" asp-page-handler="delete" asp-route-id="@contact.Id">delete</button>*@
+                            <!-- </snippet_Delete> -->
+                        </td>
+                    </tr>
+                }
+            }
+
+
+        </tbody>
+    </table>
+
+
+
+
+</div>

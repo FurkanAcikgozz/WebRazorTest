@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using WebRazorTest.Data;
+using WebRazorTest.Model;
 
 namespace WebRazorTest.Pages
 {
@@ -13,9 +15,18 @@ namespace WebRazorTest.Pages
         }
         //Logger has a ilişkisi yapıyor.
 
+        //public List<Customer> Customers { get; set; }
+        //private readonly CustomerDbContext _db;
+
+        //public IndexModel(CustomerDbContext db)
+        //{
+        //    _db = db;
+
+        //}
+
+
         public void OnGet()
         {
-
         }
     }
 }
