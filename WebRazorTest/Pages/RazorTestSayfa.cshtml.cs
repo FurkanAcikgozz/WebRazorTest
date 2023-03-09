@@ -13,7 +13,7 @@ namespace WebRazorTest.Pages
 
         public RazorTestSayfaModel()
         {
-            Books = BookDb.GetBooks();
+            Books = BookDb.GetBooks().ToList(); // ToList ne yapar????
 
             //IEnumerable<Book> bookitap = BookDb.GetBooks();
             //Books = bookitap.Where(x => x.Title.Contains("Ýyi")).ToList();

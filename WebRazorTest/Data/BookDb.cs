@@ -1,4 +1,5 @@
-﻿using static System.Reflection.Metadata.BlobBuilder;
+﻿using Microsoft.AspNetCore.Mvc.Formatters;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace WebRazorTest.Data
 {
@@ -14,7 +15,7 @@ namespace WebRazorTest.Data
             //    new Book {id = 2, Title = "Kötü Kitap", Author = "Kötü Yazar"},
             //    new Book {id = 3, Title = "Çirkin Kitap", Author = "Çirkin Yazar"}
             //};
-
+            // Books = new List<Book>(); ////readonly kullanımı
             Books.Add(new Book { id = 1, Title = "İyi Kitap", Author = "İyi Yazar" });
             Books.Add(new Book { id = 2, Title = "Kötü Kitap", Author = "Kötü Yazar" });
             Books.Add(new Book { id = 3, Title = "Çirkin Kitap", Author = "Çirkin Yazar" });

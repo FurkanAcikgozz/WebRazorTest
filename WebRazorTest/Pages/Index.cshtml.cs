@@ -11,6 +11,7 @@ namespace WebRazorTest.Pages
         {
             _logger = logger;
         }
+        //Logger has a ilişkisi yapıyor.
 
         public void OnGet()
         {

@@ -12,8 +12,18 @@ namespace WebRazorTest.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public ActionResult OnGet() //IActionResult yaparsak, I = interface yapıyor. Iile yapmanın avantajı...
         {
+            _logger.LogInformation("Privacyden Geçti");
+            //return RedirectToPage("RazorTestSayfa");
+            return NotFound("RazorTestSayfa");
+
+
         }
+
+        //public ActionResult OnPosta()
+        //{
+        //    return RedirectToPage("RazorTestSayfa");
+        //}
     }
 }
