@@ -10,8 +10,24 @@
 
 <form method="post">
     Name:
-    <input asp-for="@Model.Customer!.Name" />@* ! = customer null değilse işlemi yapıyor ?? gibi kullanılıyor*@
+    <div>
+        <div asp-validation-summary="All"></div>
+        <input asp-for="@Model.Customer!.Name" />@* ! = customer null değilse işlemi yapıyor ?? gibi kullanılıyor*@
+        <span asp-validation-for="Customer.Name" class="text-danger"></span> @*asp-validationfor, asp-for, asp-page : bunlar tag helper*@
+    </div> <br />
     <input type="submit" />
 </form>
 
 <a style="color:black" asp-page="index">Back</a>
+
+
+@*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>*@
+
+@section Scripts {
+    @*Validation için css*@
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    } @*@*burada _ValidationScriptsPartial' ı scripts içerisine ekliyoruz*@
+}

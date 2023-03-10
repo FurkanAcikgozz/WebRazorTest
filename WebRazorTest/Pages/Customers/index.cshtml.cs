@@ -10,15 +10,14 @@ namespace WebRazorTest.Pages.Customers
         public List<Customer> Customers { get; set; }
         private readonly CustomerDbContext _db;
 
-        public indexModel(CustomerDbContext db)
+        public indexModel(CustomerDbContext db) //depenced incection yapýlýyor. Ctor kod bloðunda
         {
             _db = db;
-
         }
-
-        public void OnGet()
+        
+        public void OnGet() // bunun adýn handler method
         {
-            Customers = _db.Customer.ToList(); //Customer = CustomerDbContext.cs içerisindeki custormerdýr
+            Customers = _db.Customer.OrderBy(c => c.Id).ToList(); //Customer = CustomerDbContext.cs içerisindeki custormerdýr
 
         }
     }
