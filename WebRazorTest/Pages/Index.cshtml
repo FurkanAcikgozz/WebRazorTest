@@ -1,10 +1,13 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Pizza Store";
 }
+<div class="container text-center">
+    <h1 class="display-4">^^PIZZA DEMO^^</h1>
+    <a asp-page="PizzaSale">Pizza Sale</a>
 
-<div class="text-center">
-    <h1 class="display-4">RAZOR DEMO</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="container w-80">
+        <img src="~/img/pizza-time-logo.jpg" />
+    </div>
 </div>

@@ -1,0 +1,63 @@
+﻿@page
+@model WebRazorTest.Pages.PizzaSaleModel
+@{
+    ViewData["Title"] = "Pizza Sale !!!!!!";
+}
+
+<h1>Pizza Sale</h1>
+@*<div class="bg-danger">
+
+    <img src="~/img/Pizzas/Create.png" class="w-25" /> /
+    <a asp-page="/Forms/CustomPizza">CUSTOM</a>
+</div>*@
+
+@*1 rowa 2 altılık kolon*@
+
+
+<h1>Pizza Sale</h1>
+<div class="bg-danger">
+    <div class="row">
+        <div class="col-6 text-center">
+            <img src="~/img/Pizzas/Create.png" class="w-50" />
+        </div>
+        <div class="col-6 text-end p-3">
+            <a asp-page="/Forms/CustomPizza" class="btn btn-primary w-25 m-4 ">CUSTOM</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+@foreach (var p in Model.FakePizzaDB)
+{
+    <div class="card" style="width: 18rem;">
+        @{
+            var path = "/img/Pizzas/" + p.ImageTitle + ".png";
+        }
+        <a asp-page="/Checkout/Checkout">
+            <img src="@path" class="card-img-top" alt="@p.ImageTitle">
+        </a>
+        <div class="card-body">
+            <h5 class="card-title">@p.Name</h5>
+            <a asp-page="/Checkout/Checkout" class="btn btn-primary">ORDER!</a>
+        </div>
+    </div>
+}
+
+
+@*@foreach (var p in Model.FakePizzaDB)
+{
+    <div class="card-group">
+        <div class="card">
+            @{
+                var path = "/img/Pizzas/" + p.ImageTitle + ".png";
+            }
+            <img class="card-img-top" src="@path" alt="@p.ImageTitle" width="30px" height="20px">
+            <div class="card-body">
+                <h5 class="card-title">@p.ImageTitle</h5>
+                <p class="card-text">Enfis Pizzalar.</p>
+            </div>
+        </div>
+    </div>
+}*@
