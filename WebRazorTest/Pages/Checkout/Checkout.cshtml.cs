@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
+using WebRazorTest.Data;
 using WebRazorTest.Model;
 
 namespace WebRazorTest.Pages.Checkout
@@ -13,12 +14,12 @@ namespace WebRazorTest.Pages.Checkout
         public float PizzaPrice { get; set; }
         public string ImageTitle { get; set; }
 
-        //private readonly AppDbContext _context;
+        private readonly PizzaDBContext _context;
 
-        //public CheckoutModel(AppDbContext context)
-        //{
-        //    _context = context;
-        //}
+        public ChecoutModel(PizzaDBContext context)
+        {
+            _context = context;
+        }
 
         public void OnGet()
         {
@@ -28,12 +29,13 @@ namespace WebRazorTest.Pages.Checkout
             if (string.IsNullOrWhiteSpace(ImageTitle)) //Birþey yazýlmamýþsa imagetitle null olmasýný diye Create diye yazdýk
                 ImageTitle = "Create";
 
-            //PizzaOrder pizzaOrder = new PizzaOrder();
-            //pizzaOrder.PizzaName = Name;
-            //pizzaOrder.Price = PizzaPrice;
+            PizzaOrder pizzaOrder = new PizzaOrder();
+            pizzaOrder.Name = Name;
+            pizzaOrder.Price = PizzaPrice;
+            pizzaOrder.Date = DateTime.Now;/*.ToUniversalTime()*/
 
-            //_context.PizzaOrders.Add(pizzaOrder);
-            //_context.SaveChanges();
+            _context.Orders.Add(pizzaOrder); //orders sql tablo adý
+            _context.SaveChanges();
 
         }
     }

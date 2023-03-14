@@ -11,6 +11,6 @@ namespace WebRazorTest.Model
         public string? Name { get; set; }/* =string.Empty;*/
         public float Price { get; set; }
 
-        public DateTime? Date { get; set; }
+        public DateTime Date { get; set; }
     }
 }

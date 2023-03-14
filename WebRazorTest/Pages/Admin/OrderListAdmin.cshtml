@@ -1,0 +1,53 @@
+﻿@page
+@model WebRazorTest.Pages.Admin.OrderListAdminModel
+
+@{
+    ViewData["Title"] = "OrderListAdmin";
+}
+
+<h1>OrderListAdmin</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.PizzaOrder[0].Name)*@
+                Name
+            </th>
+            <th>
+               @* @Html.DisplayNameFor(model => model.PizzaOrder[0].Price)*@
+               Price
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.PizzaOrder[0].Date)*@
+                Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.PizzaOrder) {
+        <tr>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Name)*@
+                @item.Name
+            </td>
+            <td>
+               @* @Html.DisplayFor(modelItem => item.Price)*@
+                @item.Price
+            </td>
+            <td>
+                    @item.Date.ToString("f")
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PizId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PizId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PizId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
