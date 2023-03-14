@@ -1,6 +1,13 @@
+global using Microsoft.EntityFrameworkCore; //Global ekledik. Bütün sayfalarda using yazýlmýþ olur.
+using WebRazorTest.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<PizzaDBContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DefaultConn"))); //Migration yapmak için. EF SQl ile 
+
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
